@@ -1,0 +1,13 @@
+@import '../assets/scss/_imports.scss';
+
+body {
+	background-color: $siteBackground;
+	transition: background-color .5s ease;
+}
+
+.content {
+	@include gutters;
+	@include grid;
+	margin-top: 120px;
+}
+

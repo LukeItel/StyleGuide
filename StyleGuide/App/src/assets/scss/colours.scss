@@ -1,0 +1,36 @@
+/*Greyscale*/
+$white: #fafafa;
+$lightGrey: #d3d3d3;
+$grey: #8c8c8c;
+$darkGrey: #383838;
+$black: #0d0d0d;
+
+/*Brand*/
+$orange: #f68b1f;
+$blue: #143872;
+
+/*Themes*/
+$customHex: var(--custom-color);
+$backgroundColor: var(--bg-color);
+$textColor: var(--text-color);
+$siteBackground: var(--site-bg);
+
+/* Default dark theme */
+:root {
+	--bg-color: #383838;
+	--text-color: #fafafa;
+	--site-bg: #192a2a;
+}
+
+/* Light theme override */
+[data-theme="light"] {
+	--bg-color: #fafafa;
+	--text-color: #383838;
+	--site-bg: #D0D0D0;
+}
+
+@mixin applyThemeColors {
+	background-color: $backgroundColor;
+	color: $textColor;
+	transition: all .5s ease;
+}

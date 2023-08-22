@@ -1,0 +1,68 @@
+$mobile-width: 300px;
+$tablet-width: 500px;
+$desktop-width: 800px;
+$lg-desktop-width: 1100px;
+
+
+@mixin mobile {
+	@media (max-width: #{$tablet-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$desktop-width}) and (max-width: #{$lg-desktop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin lg-desktop {
+	@media (min-width: #{$lg-desktop-width}) {
+		@content;
+	}
+}
+
+
+@mixin gutters {
+	margin: auto;
+	width: calc($lg-desktop-width - 20px);
+
+	@include desktop {
+		width: calc($desktop-width - 20px);
+	}
+
+	@include tablet {
+		width: calc($tablet-width - 10px);
+	}
+
+	@include mobile {
+		width: calc($mobile-width - 10px);
+	}
+}
+
+@mixin grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-gap: 30px;
+}
+
+@mixin fullGrid {
+	grid-column: 1 / 7;
+}
+
+@mixin halfGrid {
+	grid-column: span 3;
+}
+
+@mixin abs-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

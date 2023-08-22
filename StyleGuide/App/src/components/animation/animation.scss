@@ -1,0 +1,54 @@
+@import '../../assets/scss/_imports.scss';
+
+$animationHeight: 120px;
+$animationWidth: calc($animationHeight / 3);
+$animationOrigin: calc($animationWidth / 2);
+
+.uc {
+
+	background-color: $white;
+	display: grid;
+	grid-template-rows: repeat(2, auto);
+	width: 300px;
+	justify-content: center;
+	padding: 30px;
+	border-radius: 5px;
+	margin: auto;
+
+	&_animation {
+		margin: 20px 0px;
+		height: $animationHeight;
+		width: $animationHeight;
+		position: relative;
+		justify-self: center;
+
+		&_piece {
+			position: absolute;
+		}
+
+		.pieceOne {
+			top: 0px;
+			left: 0px;
+			height: $animationHeight;
+			width: $animationWidth;
+			transform-origin: center $animationOrigin;
+		}
+
+		.pieceTwo {
+			bottom: 0px;
+			left: 0px;
+			height: $animationWidth;
+			width: $animationHeight;
+			transform-origin: $animationOrigin center;
+		}
+
+		.pieceThree {
+			bottom: 0px;
+			right: 0px;
+			height: $animationHeight;
+			width: $animationWidth;
+			transform-origin: center calc($animationHeight - $animationOrigin);
+		}
+
+	}
+}

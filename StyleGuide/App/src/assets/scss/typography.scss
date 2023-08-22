@@ -1,0 +1,140 @@
+.text-align-center {
+	text-align: center;
+}
+
+p {
+	margin: 0; //Reset any browser defaults so I can put them on. 
+}
+
+$default_font_size: 16px;
+
+$xs: $default_font_size / 1.25;
+$s: $default_font_size;
+$m: $s * 1.25;
+$l: $m * 1.25;
+$xl: $l * 1.25;
+
+@mixin line_height_ratio($font_size) {
+	$ratio: 1.4;
+	line-height: $font_size * $ratio;
+}
+
+@mixin roboto_xs($weight: 400) {
+	font-family: 'Roboto', sans_serif;
+	font-size: $xs;
+	font-weight: $weight;
+	@include line_height_ratio($xs);
+	margin-bottom: 10px;
+}
+
+@mixin roboto_s($weight: 400) {
+	font-family: 'Roboto', sans_serif;
+	font-size: $s;
+	font-weight: $weight;
+	@include line_height_ratio($s);
+	margin-bottom: 15px;
+}
+
+@mixin roboto_m($weight: 400) {
+	font-family: 'Roboto', sans_serif;
+	font-size: $m;
+	font-weight: $weight;
+	@include line_height_ratio($m);
+	margin-bottom: 15px;
+}
+
+@mixin roboto_l($weight: 400) {
+	font-family: 'Roboto', sans_serif;
+	font-size: $l;
+	font-weight: $weight;
+	@include line_height_ratio($l);
+	margin-bottom: 20px;
+}
+
+@mixin roboto_xl($weight: 400) {
+	font-family: 'Roboto', sans_serif;
+	font-size: $xl;
+	font-weight: $weight;
+	@include line_height_ratio($xl);
+	margin-bottom: 25px;
+}
+
+.roboto_xs_light {
+	@include roboto_xs(300);
+}
+
+.roboto_xs {
+	@include roboto_xs;
+}
+
+.roboto_xs_bold {
+	@include roboto_xs(500);
+}
+
+.roboto_xs_xbold {
+	@include roboto_xs(700);
+}
+
+.roboto_s_light {
+	@include roboto_s(300);
+}
+
+.roboto_s {
+	@include roboto_s;
+}
+
+.roboto_s_bold {
+	@include roboto_s(500);
+}
+
+.roboto_s_xbold {
+	@include roboto_s(700);
+}
+
+.roboto_m_light {
+	@include roboto_m(300);
+}
+
+.roboto_m {
+	@include roboto_m;
+}
+
+.roboto_m_bold {
+	@include roboto_m(500);
+}
+
+.roboto_m_xbold {
+	@include roboto_m(700);
+}
+
+.roboto_l_light {
+	@include roboto_l(300);
+}
+
+.roboto_l {
+	@include roboto_l;
+}
+
+.roboto_l_bold {
+	@include roboto_l(500);
+}
+
+.roboto_l_xbold {
+	@include roboto_l(700);
+}
+
+.roboto_xl_light {
+	@include roboto_xl(300);
+}
+
+.roboto_xl {
+	@include roboto_xl;
+}
+
+.roboto_xl_bold {
+	@include roboto_xl(500);
+}
+
+.roboto_xl_xbold {
+	@include roboto_xl(700);
+}

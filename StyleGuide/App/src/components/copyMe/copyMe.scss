@@ -1,0 +1,14 @@
+@import '../../assets/scss/_imports.scss';
+
+.copyMe {
+	background: $textColor;
+	color: $backgroundColor;
+	border-radius: 5px;
+	text-align: center;
+	padding: 5px 10px 10px;
+	transition: all .5s ease;
+
+	p {
+		margin: 10px 0px;
+	}
+}

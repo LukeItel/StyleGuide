@@ -1,0 +1,97 @@
+@import 'colours.scss';
+@import 'typography.scss';
+
+.cta {
+	display: inline-block;
+	padding: 10px 20px;
+	border-radius: 46px;
+	@include roboto_s(500);
+	transition: all .5s;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	border: solid 2px $customHex;
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transition: all .5s;
+		background-color: $backgroundColor;
+		border-radius: 46px;
+		z-index: -2;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		height: 100%;
+		background-color: $textColor;
+		transition: all .5s;
+		border-radius: 46px;
+		z-index: -1;
+	}
+
+	&:hover {
+		color: $backgroundColor;
+
+		&:before {
+			width: 101%;
+		}
+	}
+
+	&_dark {
+		background-color: $backgroundColor;
+		color: $textColor;
+	}
+
+	&_light {
+		background-color: $textColor;
+		color: $backgroundColor;
+	}
+}
+
+@mixin boxShadow {
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.4);
+}
+
+@mixin bottomBorder {
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		content: '';
+		position: absolute;
+		height: 4px;
+		background-color: $textColor;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		transition: all .5s ease;
+	}
+}
+
+@mixin bottomBorderHover {
+	&:after {
+		content: '';
+		position: absolute;
+		height: 4px;
+		background-color: $customHex;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		transition: width .5s ease;
+	}
+
+	&:hover {
+		&:after {
+			width: 100%;
+		}
+	}
+}
